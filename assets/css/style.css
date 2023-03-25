@@ -1277,6 +1277,10 @@ ul {
 	background-size: cover;
 }
 
+.get-in-touch__text {
+	margin-top: 20px;
+}
+
 .contact-area .form input,
 .contact-area .form textarea {
 	width: 100%;
