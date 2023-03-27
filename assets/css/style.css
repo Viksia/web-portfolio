@@ -1125,6 +1125,13 @@ ul {
 	margin-top: 40px;
 }
 
+.project-info {
+	position: relative;
+	text-align: center;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
 /**************************************
  * 09.Testimonial Section Style
  *************************************/
@@ -1265,6 +1272,19 @@ ul {
 
 .blog-bottom-text-link {
 	margin-top: 25px;
+}
+/* <!-- Technology Section --> */
+
+.technology-wrap {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.technology-wrap-firstrow {
+	margin-bottom: 25px;
 }
 
 /**************************************

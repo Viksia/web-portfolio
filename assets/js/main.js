@@ -200,6 +200,36 @@
 	});
 
 	//  MagnificPopup
+
+	// var magnifPopup = function () {
+	// 	$(".popup-img").magnificPopup({
+	// 		type: "inline",
+	// 		removalDelay: 300,
+	// 		mainClass: "mfp-with-zoom",
+	// 		gallery: {
+	// 			enabled: true,
+	// 		},
+	// 		zoom: {
+	// 			enabled: true,
+	// 			duration: 300,
+	// 			easing: "ease-in-out",
+	// 			opener: function (openerElement) {
+	// 				return openerElement.is("img")
+	// ? openerElement
+	// 					: openerElement.find("img");
+	// 			},
+	// 		},
+	// 		callbacks: {
+	// 			markupParse: function (template, values, item) {
+	// 				// Добавьте этот обратный вызов для обработки разметки перед отображением всплывающего окна
+	// 				var projectInfo = item.el[0].nextElementSibling;
+	// 				template.find(".mfp-img").after(projectInfo);
+	// 			},
+	// 		},
+	// 	});
+	// };
+	// magnifPopup();
+
 	var magnifPopup = function () {
 		$(".popup-img").magnificPopup({
 			type: "image",
@@ -209,23 +239,43 @@
 				enabled: true,
 			},
 			zoom: {
-				enabled: true, // By default it's false, so don't forget to enable it
-				duration: 300, // duration of the effect, in milliseconds
-				easing: "ease-in-out", // CSS transition easing function
-				// The "opener" function should return the element from which popup will be zoomed in
-				// and to which popup will be scaled down
-				// By defailt it looks for an image tag:
+				enabled: true,
+				duration: 300,
+				easing: "ease-in-out",
 				opener: function (openerElement) {
-					// openerElement is the element on which popup was initialized, in this case its <a> tag
-					// you don't need to add "opener" option if this code matches your needs, it's defailt one.
 					return openerElement.is("img")
 						? openerElement
 						: openerElement.find("img");
 				},
 			},
+			// Добавляем опцию 'image' с функцией 'titleSrc'
+			image: {
+				titleSrc: function (item) {
+					var projectUrl = item.el.attr("data-project-url");
+					var projectDescription =
+						item.el.attr("data-project-description") || "link to the project";
+					var projectCaption =
+						item.el.attr("data-project-caption") || "Description";
+
+					if (projectUrl) {
+						return (
+							"<div class='mfp-title'>" +
+							"<p>" +
+							projectCaption +
+							"</p>" + // Добавляем дополнительную строку с описанием проекта
+							"<a href='" +
+							projectUrl +
+							"' target='_blank'>" +
+							projectDescription +
+							"</a></div>"
+						);
+					} else {
+						return "";
+					}
+				},
+			},
 		});
 	};
-	// Call the functions
 	magnifPopup();
 
 	/*START CONTACT MAP JS*/
