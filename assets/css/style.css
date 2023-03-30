@@ -497,6 +497,12 @@ ul {
 	font-family: "Rubik", sans-serif;
 }
 
+.logo-flex {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu,
 .navbar-b .dropdown.show .dropdown-menu,
 .navbar-b .dropdown-btn.show .dropdown-menu {
