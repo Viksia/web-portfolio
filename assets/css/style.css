@@ -588,7 +588,7 @@ ul {
  * 04.Home Section Style
  *************************************/
 .home-area {
-	height: 100vh;
+	/* height: 100vh; */
 	position: relative;
 	color: #fff;
 	text-align: center;
